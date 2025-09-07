@@ -11,15 +11,15 @@
 <body>
     <div class="login_conteiner">
         <h2>login</h2>
-        <form action="chat.html" method="get">
+        <form action="php/login.php" method="post">
             <div class="form_group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
 
             <div class="form_group">
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
+                <input type="password" name="senha" placeholder="Senha" required>
             </div>
             <button type="submit">Entrar</button>
         </form>

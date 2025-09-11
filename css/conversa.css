@@ -1,7 +1,12 @@
 body {
     font-family: Arial, sans-serif;
+    background: #f9f9f9;
     padding: 20px;
-    background: #fafafa;
+}
+
+h1,
+h2 {
+    color: #333;
 }
 
 #chat {
@@ -9,6 +14,8 @@ body {
     border: 1px solid #ccc;
     background: white;
     border-radius: 5px;
+    min-height: 150px;
+    margin-bottom: 20px;
 }
 
 .mensagem {
@@ -18,11 +25,43 @@ body {
 }
 
 .cliente {
-    background: #e0f7fa;
+    background: #e1f5fe;
     text-align: left;
 }
 
 .ia {
     background: #f1f8e9;
     text-align: right;
+}
+
+canvas {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #42a5f5 0%, #9ccc65 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(66, 165, 245, 0.15);
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(90deg, #1976d2 0%, #689f38 100%);
+    transform: translateY(-2px) scale(1.03);
+    text-decoration: none;
 }

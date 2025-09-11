@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f4f9;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+.usuario {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+}
+
+.usuario a {
+    text-decoration: none;
+    color: #0066cc;
+}

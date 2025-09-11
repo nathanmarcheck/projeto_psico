@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #fafafa;
+}
+
+#chat {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+}
+
+.mensagem {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.cliente {
+    background: #e0f7fa;
+    text-align: left;
+}
+
+.ia {
+    background: #f1f8e9;
+    text-align: right;
+}

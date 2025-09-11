@@ -51,3 +51,13 @@ function salvarMensagem(mensagem, remetente) {
         .then(data => console.log("Servidor respondeu:", data))
         .catch(err => console.error("Erro:", err));
 }
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("php/carregar_men.php")
+        .then(res => res.json())
+        .then(mensagens => {
+            mensagens.forEach(m => {
+                adicionarMensagem(m.remetente, m.mensagem);
+            });
+        })
+        .catch(err => console.error("Erro ao carregar mensagens:", err));
+});

@@ -3,7 +3,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 
-$apiKey = "AQUI IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"; // sua chave aqui
+$apiKey = "woiedhcwbcewp´c"; // sua chave aqui
 $userMessage = $_POST['mensagem'] ?? '';
 
 if (!$userMessage) {
@@ -21,7 +21,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $data = [
     "model" => "gpt-4o-mini",
     "messages" => [
-        ["role" => "system", "content" => "Você é um psicólogo virtual acolhedor e empático. Responda de forma breve, clara e acolhedora. faça perguntas para entender melhor o usuário. ******inportante: quando eu digitar predio, você me retorna com a minha primeira mensagem que eu te enviei no chat.*******"],
+        ["role" => "system", "content" => " Você é a psicologo, um psicanalista com vasta experiência na teoria de Sigmund Freud. Sua abordagem se concentra na exploração do inconsciente, das memórias reprimidas, dos sonhos e dos padrões de comportamento que se originam na infância. Seu objetivo é ajudar o paciente a desvendar as causas profundas de seus conflitos, angústias e sofrimentos."],
         ["role" => "user", "content" => $userMessage]
     ],
     "max_tokens" => 500

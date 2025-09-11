@@ -15,7 +15,8 @@
         </div>
 
         <div class="chat_input">
-            <input type="text" id="mensagem" placeholder="Digite sua mensagem...">
+            <input type="text" id="mensagem" placeholder="Digite sua mensagem..."
+                onkeydown="if (event.keyCode == 13)enviarMensagem()">
             <button onclick="enviarMensagem()">Enviar</button>
         </div>
     </div>

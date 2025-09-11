@@ -11,24 +11,27 @@ function enviarMensagem() {
 
     input.value = '';
 
-    // Resposta automática simulada
-    setTimeout(() => {
-        const respostas = [
-            "Olá, estou aqui para te ouvir 😊",
-            "Entendi. Pode me contar mais sobre isso?",
-            "Isso parece importante. Como você se sente em relação a isso?",
-            "Obrigado por compartilhar isso comigo. Estou aqui para ajudar.",
-            "Isso é algo que você gostaria de explorar mais profundamente?",
-        ];
-        const respostaAleatoria = respostas[Math.floor(Math.random() * respostas.length)];
+    // Chama o backend que fala com a IA
+    fetch("php/gerar_mensagem.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "mensagem=" + encodeURIComponent(texto)
+    })
+        .then(res => res.json())
+        .then(data => {
+            const resposta = data.resposta;
 
-        adicionarMensagem('ia', respostaAleatoria);
+            adicionarMensagem('ia', resposta);
 
-        // Salva resposta no banco
-        salvarMensagem(respostaAleatoria, 'ia');
+            // Salva resposta da IA no banco
+            salvarMensagem(resposta, 'ia');
+        })
+        .catch(err => console.error("Erro:", err));
 
-    }, 1000);
 }
+
 
 function adicionarMensagem(remetente, texto) {
     const chatBox = document.getElementById('chat_box');

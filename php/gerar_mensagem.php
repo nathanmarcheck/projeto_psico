@@ -3,7 +3,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 
-$apiKey = "woiedhcwbcewp´c"; // sua chave aqui
+$apiKey = "AQUI"; // sua chave aqui
 $userMessage = $_POST['mensagem'] ?? '';
 
 if (!$userMessage) {

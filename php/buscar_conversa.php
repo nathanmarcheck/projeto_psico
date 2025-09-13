@@ -13,7 +13,7 @@ $stmt->execute();
 $mensagens = $stmt->get_result();
 
 while ($m = $mensagens->fetch_assoc()) {
-    echo "<div class='mensagem " . $m['remetente'] . "'>
+        echo "<div class='mensagem " . $m['remetente'] . "'>
             <strong>" . ucfirst($m['remetente']) . ":</strong> 
             " . htmlspecialchars($m['mensagem']) . "
             <br><small>" . $m['criado_em'] . "</small>

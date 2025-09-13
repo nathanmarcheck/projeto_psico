@@ -21,7 +21,7 @@
             </select>
             <button type="submit">Cadastrar</button>
         </form>
-        <p>Já tem conta? <a href="index.php">fazer login</a></p>
+        <p>Já tem conta? <a href="log.php">fazer login</a></p>
     </div>
 
 </body>

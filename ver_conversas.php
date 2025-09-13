@@ -26,40 +26,40 @@ $usuario_id = $_GET['id'] ?? 0;
     <a href="painel.php" class="btn-voltar">⬅ Voltar ao painel</a>
 
     <script>
-        // Carregar conversa
-        fetch("php/buscar_conversa.php?id=<?= $usuario_id ?>")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("chat").innerHTML = data;
-            })
-            .catch(err => console.error("Erro ao carregar conversa:", err));
+    // Carregar conversa
+    fetch("php/buscar_conversa.php?id=<?= $usuario_id ?>")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("chat").innerHTML = data;
+        })
+        .catch(err => console.error("Erro ao carregar conversa:", err));
 
-        // Carregar dados do gráfico
-        fetch("php/buscar_dados.php?id=<?= $usuario_id ?>")
-            .then(res => res.json())
-            .then(data => {
-                const ctx = document.getElementById("grafico").getContext("2d");
-                new Chart(ctx, {
-                    type: "bar",
-                    data: {
-                        labels: ["Mensagens do cliente", "Tempo de uso(min)"],
-                        datasets: [{
-                            label: "Dados do Cliente",
-                            data: [data.qtd_mensagens, data.tempo_uso_min],
-                            backgroundColor: ["#42a5f5", "#9ccc65"]
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
+    // Carregar dados do gráfico
+    fetch("php/buscar_dados.php?id=<?= $usuario_id ?>")
+        .then(res => res.json())
+        .then(data => {
+            const ctx = document.getElementById("grafico").getContext("2d");
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["Mensagens do cliente", "Tempo de uso(min)"],
+                    datasets: [{
+                        label: "Dados do Cliente",
+                        data: [data.qtd_mensagens, data.tempo_uso_min],
+                        backgroundColor: ["#42a5f5", "#9ccc65"]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
                         }
                     }
-                });
-            })
-            .catch(err => console.error("Erro ao carregar gráfico:", err));
+                }
+            });
+        })
+        .catch(err => console.error("Erro ao carregar gráfico:", err));
     </script>
 </body>
 

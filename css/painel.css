@@ -1,23 +1,179 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f4f4f9;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1,
+:root {
+    --primary: hsl(220, 90%, 96%);
+    --primary-foreground: hsl(220, 13%, 26%);
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(220, 13%, 9%);
+    --muted: hsl(220, 14%, 96%);
+    --muted-foreground: hsl(220, 13%, 46%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(220, 13%, 9%);
+    --border: hsl(220, 13%, 91%);
+    --accent: hsl(213, 94%, 68%);
+    --accent-foreground: hsl(0, 0%, 100%);
+    --radius: 8px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
 h2 {
-    color: #333;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--foreground);
+    margin: 2rem 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+h2::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+#lista_clientes {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .usuario {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background: white;
-    border-radius: 5px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.usuario:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.usuario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), hsl(262, 83%, 58%));
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.usuario:hover::before {
+    opacity: 1;
+}
+
+.usuario strong {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--card-foreground);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.usuario em {
+    font-style: normal;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.usuario button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    font-weight: 500;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.875rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.usuario button:hover {
+    background: hsl(213, 94%, 60%);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.usuario button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 .usuario a {
     text-decoration: none;
-    color: #0066cc;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #lista_clientes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .usuario {
+        padding: 1rem;
+    }
 }

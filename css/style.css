@@ -41,10 +41,11 @@ label {
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 100px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s;
+    margin: 10px;
 }
 
 button {

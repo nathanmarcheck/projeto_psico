@@ -1,67 +1,197 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1,
+:root {
+    --primary: hsl(220, 90%, 96%);
+    --primary-foreground: hsl(220, 13%, 26%);
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(220, 13%, 9%);
+    --muted: hsl(220, 14%, 96%);
+    --muted-foreground: hsl(220, 13%, 46%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(220, 13%, 9%);
+    --border: hsl(220, 13%, 91%);
+    --accent: hsl(213, 94%, 68%);
+    --accent-foreground: hsl(0, 0%, 100%);
+    --radius: 8px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
 h2 {
-    color: #333;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--foreground);
+    margin: 3rem 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+h2::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 #chat {
-    padding: 10px;
-    border: 1px solid #ccc;
-    background: white;
-    border-radius: 5px;
-    min-height: 150px;
-    margin-bottom: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: var(--shadow-sm);
 }
 
 .mensagem {
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--radius);
+    position: relative;
 }
 
-.cliente {
-    background: #e1f5fe;
-    text-align: left;
+.mensagem.cliente {
+    background: var(--muted);
+    margin-left: 2rem;
 }
 
-.ia {
-    background: #f1f8e9;
-    text-align: right;
+.mensagem.psicologo {
+    background: var(--accent);
+    color: var(--accent-foreground);
+    margin-right: 2rem;
 }
 
-canvas {
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 20px auto;
+.mensagem strong {
+    font-size: 0.875rem;
+    font-weight: 600;
     display: block;
+    margin-bottom: 0.5rem;
+}
+
+.mensagem p {
+    margin-bottom: 0.5rem;
+}
+
+.horario {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+}
+
+#grafico {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-voltar {
-    display: inline-block;
-    padding: 10px 24px;
-    background: linear-gradient(90deg, #42a5f5 0%, #9ccc65 100%);
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: var(--accent-foreground);
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(66, 165, 245, 0.15);
-    transition: background 0.3s, transform 0.2s;
-    cursor: pointer;
-    margin-top: 24px;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--shadow-sm);
+    margin-top: 2rem;
 }
 
 .btn-voltar:hover {
-    background: linear-gradient(90deg, #1976d2 0%, #689f38 100%);
-    transform: translateY(-2px) scale(1.03);
-    text-decoration: none;
+    background: hsl(213, 94%, 60%);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.btn-voltar:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Scrollbar personalizada para o chat */
+#chat::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat::-webkit-scrollbar-track {
+    background: var(--muted);
+    border-radius: 3px;
+}
+
+#chat::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+#chat::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .mensagem.cliente {
+        margin-left: 0;
+    }
+
+    .mensagem.psicologo {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .mensagem {
+        padding: 0.75rem;
+    }
 }

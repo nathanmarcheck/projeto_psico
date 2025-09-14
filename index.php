@@ -150,7 +150,7 @@
                 </div>
 
                 <div class="stats-panel">
-                    <h3 class="stats-title">Dados</h3>
+                    <h3 class="stats-title">Sobre nós:</h3>
 
                     <div class="stats-grid">
                         <div class="stat-item">

@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $nome, $email, $senha_hash, $tipo);
 
     if ($stmt->execute()) {
-        header("Location: ../log.php"); // cadastro ok → vai pro login/index
+        header("Location: ../log.php");
         exit();
     } else {
         echo "❌ Erro ao cadastrar usuário.";

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat - Psicologia IA</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="icon" type="image/png" href="assets/icons/logolonge.ico">
 </head>
 
 <body>

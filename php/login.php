@@ -3,7 +3,7 @@ include("conexao.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
+    $email = trim($_POST['email']);
     $senha = $_POST['senha'];
 
     $sql = "SELECT * FROM usuarios WHERE email = ?";
@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario_nome'] = $usuario['nome'];
             $_SESSION['usuario_tipo'] = $usuario['tipo'];
 
-
             if ($usuario['tipo'] === 'psicologo') {
                 header("Location: ../painel.php");
             } else {
@@ -30,10 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit();
         } else {
-            echo "❌ Senha incorreta";
+            // Senha incorreta → redireciona com erro=2
+            header("Location: ../log.php?erro=2");
+            exit();
         }
     } else {
-        echo "⚠️ Usuário não encontrado";
+        // Usuário não encontrado → redireciona com erro=1
+        header("Location: ../log.php?erro=1");
+        exit();
     }
 
     $stmt->close();

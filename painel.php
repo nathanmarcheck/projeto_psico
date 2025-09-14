@@ -12,6 +12,7 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_tipo'] !== 'psicologo'
     <meta charset="UTF-8">
     <title>Painel do Psicólogo</title>
     <link rel="stylesheet" href="css/painel.css">
+    <link rel="icon" type="image/png" href="assets/icons/logolonge.ico">
 </head>
 
 <body>

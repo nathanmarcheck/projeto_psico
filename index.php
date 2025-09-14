@@ -7,7 +7,8 @@
     <title>TechCorp - Inovação em Tecnologia</title>
     <meta name="description"
         content="Transformamos ideias em soluções digitais extraordinárias. Desenvolvimento web, design UX/UI e consultoria tecnológica.">
-    <link rel="stylesheet" href="css/index.css">]
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/png" href="assets/icons/logolonge.ico">
 </head>
 
 <body>
@@ -16,11 +17,10 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-section">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=32&h=32&fit=crop&crop=center"
-                        alt="Logo" class="logo">
-                    <span class="logo-text">TechCorp</span>
+                    <img src="assets/img/logoprox.jpg" alt="Logo" class="logo">
+                    <span class="logo-text">BluMind</span>
                 </div>
-                <button class="login-btn"><a href="regist.php">Login</a></button>
+                <button class="login-btn"><a href="cadastro.php">Registrar</a></button>
             </div>
         </div>
     </header>
@@ -30,20 +30,19 @@
         <div class="container">
             <div class="hero-logo">
                 <div class="hero-logo-container">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=128&h=128&fit=crop&crop=center"
-                        alt="Logo Principal" class="hero-logo-img">
+                    <img src="assets/img/logoescrita.jpg" alt="Logo Principal" class="hero-logo-img">
                     <div class="hero-logo-overlay"></div>
                 </div>
             </div>
 
             <h1 class="hero-title">
                 Inovação em
-                <span class="hero-gradient-text">Tecnologia</span>
+                <span class="hero-gradient-text">Psicologia</span>
             </h1>
 
             <p class="hero-description">
-                Transformamos ideias em soluções digitais extraordinárias.
-                Conectamos tecnologia e criatividade para impulsionar o seu negócio.
+                Revolucionando o mercado de Inteligencias Artificiais com o uso de IA para melhora no atendimento em
+                Psicologia.
             </p>
         </div>
     </section>
@@ -52,46 +51,50 @@
     <section class="cards-section">
         <div class="container">
             <div class="section-title">
-                <h2>Nossos Serviços</h2>
-                <p>Oferecemos soluções completas para transformar sua visão em realidade digital</p>
+                <h2>Nossas Vantagens</h2>
+                <p>Oferecemos soluções para que o atendimento psicológico seja mais eficaz e acessível a todos.
+                </p>
             </div>
 
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">🌐</div>
-                    <h3 class="card-title">Desenvolvimento Web</h3>
-                    <div class="card-stats">500+ Projetos</div>
+                    <h3 class="card-title">Acesso 24 Horas</h3>
+                    <div class="card-stats">Projetado para qualquer ocasião</div>
                     <p class="card-description">
-                        Criamos aplicações web modernas, responsivas e otimizadas para performance máxima.
+                        O programa satisfaz todos clientes que usam, não há necessidade de disponibilidade de horário.
+                        Atuante por 24 Horas
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">🎨</div>
-                    <h3 class="card-title">Design UX/UI</h3>
-                    <div class="card-stats">98% Satisfação</div>
+                    <h3 class="card-title">Design Inteligente</h3>
+                    <div class="card-stats">100% Científico</div>
                     <p class="card-description">
-                        Interfaces intuitivas e experiências de usuário que convertem visitantes em clientes.
+                        Interfaces criadas adequadas com a psicologia das cores para um ambiente mais confortável.
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">💡</div>
-                    <h3 class="card-title">Consultoria Tech</h3>
-                    <div class="card-stats">10+ Anos</div>
+                    <h3 class="card-title">Pioneira</h3>
+                    <div class="card-stats">Unica IA de psicologia do mercado</div>
                     <p class="card-description">
-                        Estratégias tecnológicas personalizadas para acelerar o crescimento do seu negócio.
+                        A BluMind é a primeira IA do mercado focada em psicologia, trazendo inovação e tecnologia para o
+                        cuidado com a saúde mental.
                     </p>
                 </div>
 
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-icon">🛡️</div>
-                    <h3 class="card-title">Suporte 24/7</h3>
-                    <div class="card-stats">24h Resposta</div>
+                    <h3 class="card-title">Suporte</h3>
+                    <div class="card-stats">Atendimento Especializado</div>
                     <p class="card-description">
-                        Equipe especializada disponível para garantir que sua solução funcione perfeitamente.
+                        Equipe especializada para suporte técnico e atendimento ao cliente, garantindo uma experiência
+                        tranquila e eficiente.
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -103,42 +106,43 @@
                 <div class="info-content">
                     <h2>
                         Por que escolher a
-                        <span class="hero-gradient-text">TechCorp?</span>
+                        <span class="hero-gradient-text">BluMind?</span>
                     </h2>
 
                     <p>
-                        Somos uma empresa líder em desenvolvimento de soluções digitais, com foco em
-                        inovação e excelência. Nossa missão é transformar desafios em oportunidades
-                        através da tecnologia.
+                        Somos uma empresa dedicada a transformar o ramo da psicologia com soluções inovadoras e
+                        eficazes.
+                        Nossa missão é proporcionar ferramentas que facilitem o acesso ao cuidado com a saúde mental.
                     </p>
 
                     <ul class="features-list">
                         <li class="feature-item">
                             <div class="feature-dot"></div>
                             <div>
-                                <h3 class="feature-title">Tecnologia de Ponta</h3>
+                                <h3 class="feature-title">Inovação e Tecnologia</h3>
                                 <p class="feature-description">
-                                    Utilizamos as mais recentes tecnologias e frameworks para garantir soluções modernas
-                                    e escaláveis.
+                                    Utilizamos as mais recentes tecnologias de IA para criar soluções que realmente
+                                    fazem a diferença.
                                 </p>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-dot"></div>
                             <div>
-                                <h3 class="feature-title">Equipe Especializada</h3>
+                                <h3 class="feature-title">Segue a ODS</h3>
                                 <p class="feature-description">
-                                    Profissionais com mais de 10 anos de experiência em desenvolvimento e design
-                                    digital.
+                                    Estamos alinhados com os Objetivos de Desenvolvimento Sustentável da ONU, promovendo
+                                    práticas que integran a tecnologia e o bem-estar social e saúde mental.
                                 </p>
                             </div>
                         </li>
                         <li class="feature-item">
                             <div class="feature-dot"></div>
                             <div>
-                                <h3 class="feature-title">Metodologia Ágil</h3>
+                                <h3 class="feature-title">100% de Segurança</h3>
                                 <p class="feature-description">
-                                    Processos otimizados que garantem entregas rápidas sem comprometer a qualidade.
+                                    Garantimos total confidencialidade e segurança dos dados dos nossos usuários,
+                                    respeitando sua privacidade.
                                 </p>
                             </div>
                         </li>
@@ -146,11 +150,11 @@
                 </div>
 
                 <div class="stats-panel">
-                    <h3 class="stats-title">Nossos Números</h3>
+                    <h3 class="stats-title">Dados</h3>
 
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <div class="stat-number">500+</div>
+                            <div class="stat-number">60+</div>
                             <div class="stat-label">Projetos Entregues</div>
                         </div>
                         <div class="stat-item">
@@ -158,11 +162,11 @@
                             <div class="stat-label">Clientes Satisfeitos</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">24h</div>
+                            <div class="stat-number">12h</div>
                             <div class="stat-label">Tempo de Resposta</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">10+</div>
+                            <div class="stat-number">1</div>
                             <div class="stat-label">Anos de Experiência</div>
                         </div>
                     </div>
@@ -172,11 +176,9 @@
             <div class="closing-section">
                 <h3>Compromisso com a Excelência</h3>
                 <p>
-                    Cada projeto é uma oportunidade de superar expectativas. Trabalhamos em
-                    estreita colaboração com nossos clientes para entender suas necessidades
-                    e entregar soluções que impulsionam resultados reais. Nossa abordagem
-                    centrada no usuário e nossa paixão por inovação nos tornam o parceiro
-                    ideal para sua jornada digital.
+                    Na BluMind, estamos comprometidos em oferecer soluções que não apenas atendam, mas superem as
+                    expectativas dos nossos clientes.
+                    Junte-se a nós e descubra como podemos transformar suas ideias em realidade.
                 </p>
             </div>
         </div>
@@ -188,38 +190,36 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=32&h=32&fit=crop&crop=center"
-                            alt="Logo TechCorp" class="footer-logo">
-                        <span class="footer-brand-text">TechCorp</span>
+                        <img src="assets/img/logolonge.jpg" alt="Logo BluMind" class="footer-logo">
+                        <span class="footer-brand-text">BluMind</span>
                     </div>
                     <p class="footer-description">
-                        Transformamos ideias em soluções digitais extraordinárias.
-                        Sua parceira de confiança em tecnologia e inovação.
+                        Transformando ideias em soluções digitais extraordinárias.
                     </p>
                 </div>
 
                 <div class="footer-section">
                     <h4>Serviços</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Desenvolvimento Web</a></li>
-                        <li><a href="#">Design UX/UI</a></li>
-                        <li><a href="#">Consultoria Tech</a></li>
-                        <li><a href="#">Suporte 24/7</a></li>
+                        <li><a href="#">Chat Personalizado com IA</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Consultoria Psicologica</a></li>
+
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>Contato</h4>
                     <ul class="footer-links">
-                        <li>contato@techcorp.com</li>
-                        <li>+55 (11) 99999-9999</li>
-                        <li>São Paulo, Brasil</li>
+                        <li>BluMind@gmail.com</li>
+                        <li>+55 (42) 99815-4550</li>
+                        <li>Paraná, Brasil</li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 TechCorp. Todos os direitos reservados.</p>
+                <p>&copy; 2024 BluMind. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>

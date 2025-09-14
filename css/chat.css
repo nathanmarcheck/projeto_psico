@@ -1,0 +1,302 @@
+:root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 9%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 262 83% 58%;
+    --radius: 12px;
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(213 94% 68%));
+    --shadow-elegant: 0 10px 40px -10px hsl(262 83% 58% / 0.2);
+    --shadow-card: 0 4px 20px -2px hsl(240 10% 9% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+    --background: 240 10% 9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 262 83% 58%;
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(213 94% 68%));
+    --shadow-elegant: 0 10px 40px -10px hsl(262 83% 58% / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+.login_container,
+.login_conteiner {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+}
+
+.login_container:hover,
+.login_conteiner:hover {
+    box-shadow: var(--shadow-elegant);
+}
+
+h2 {
+    color: hsl(var(--foreground));
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    color: hsl(var(--foreground));
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: calc(var(--radius) - 2px);
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+}
+
+input::placeholder {
+    color: hsl(var(--muted-foreground));
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+button[type="submit"] {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: calc(var(--radius) - 2px);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-elegant);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+p {
+    text-align: center;
+    margin-top: 1rem;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.9rem;
+}
+
+a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+
+    .login_container,
+    .login_conteiner,
+    .chat_container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .chat-box {
+        height: 60vh;
+    }
+}
+
+/* Estilos para Chat */
+.chat_container,
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.chat_container:hover,
+.chat-container:hover {
+    box-shadow: var(--shadow-elegant);
+}
+
+.chat_container h2,
+.chat-container h2 {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.chat-box {
+    height: 500px;
+    padding: 10px;
+    overflow-y: auto;
+    background: hsl(var(--muted));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat_input,
+.chat-input {
+    display: flex;
+    border-top: 1px solid hsl(var(--border));
+}
+
+.chat_input input,
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    outline: none;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-size: 1rem;
+}
+
+.chat_input input:focus,
+.chat-input input:focus {
+    outline: none;
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+}
+
+.chat_input button,
+.chat-input button {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.chat_input button:hover,
+.chat-input button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-elegant);
+}
+
+/* Mensagens do chat */
+.mensagem {
+    padding: 0.75rem;
+    border-radius: calc(var(--radius) - 4px);
+    margin: 0.25rem 0;
+    max-width: 70%;
+    word-wrap: break-word;
+    display: block;
+}
+
+.mensagem.usuario,
+.mensagem.cliente {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 4px calc(var(--radius) - 4px);
+}
+
+.mensagem.ia {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    border: 1px solid hsl(var(--border));
+    border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) calc(var(--radius) - 4px) 4px;
+}

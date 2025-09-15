@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/09/2025 às 03:13
+-- Tempo de geração: 15/09/2025 às 16:40
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -63,7 +63,19 @@ INSERT INTO `conversas` (`id`, `usuario_id`, `remetente`, `mensagem`, `criado_em
 (85, 14, 'cliente', 'ola', '2025-09-12 01:08:03'),
 (86, 14, 'ia', 'Olá! Como você está se sentindo hoje? Há algo específico que gostaria de explorar ou discutir?', '2025-09-12 01:08:05'),
 (87, 14, 'cliente', 'estou ansioso', '2025-09-12 01:08:41'),
-(88, 14, 'ia', 'Entendo que a ansiedade pode ser uma experiência difícil de lidar. Muitas vezes, a ansiedade está ligada a pensamentos, memórias ou situações que podem estar enterradas em nosso inconsciente. Para começarmos a explorar isso juntos, que tal falarmos sobre o que está causando essa ansiedade? Você consegue identificar alguma situação específica, pensamento ou até mesmo um sonho que esteja contribuindo para esse sentimento?', '2025-09-12 01:08:45');
+(88, 14, 'ia', 'Entendo que a ansiedade pode ser uma experiência difícil de lidar. Muitas vezes, a ansiedade está ligada a pensamentos, memórias ou situações que podem estar enterradas em nosso inconsciente. Para começarmos a explorar isso juntos, que tal falarmos sobre o que está causando essa ansiedade? Você consegue identificar alguma situação específica, pensamento ou até mesmo um sonho que esteja contribuindo para esse sentimento?', '2025-09-12 01:08:45'),
+(89, 12, 'cliente', 'ola', '2025-09-13 02:01:32'),
+(90, 12, 'ia', 'Olá! Como posso ajudá-lo hoje? Sinta-se à vontade para compartilhar o que está em sua mente.', '2025-09-13 02:01:34'),
+(91, 10, 'cliente', 'eve', '2025-09-14 20:00:18'),
+(92, 10, 'ia', '⚠️ Erro: {\"error\":{\"message\":\"Incorrect API key provided: aqui. You can find your API key at https:\\/\\/platform.openai.com\\/account\\/api-keys.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"}}', '2025-09-14 20:00:18'),
+(93, 10, 'cliente', 'e', '2025-09-14 20:02:48'),
+(94, 10, 'ia', '⚠️ Erro: {\"error\":{\"message\":\"Incorrect API key provided: aqui. You can find your API key at https:\\/\\/platform.openai.com\\/account\\/api-keys.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"}}', '2025-09-14 20:02:49'),
+(95, 10, 'cliente', 'f', '2025-09-14 20:04:34'),
+(96, 10, 'ia', '⚠️ Erro: {\"error\":{\"message\":\"Incorrect API key provided: aqui. You can find your API key at https:\\/\\/platform.openai.com\\/account\\/api-keys.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"}}', '2025-09-14 20:04:34'),
+(97, 10, 'cliente', 'fr', '2025-09-14 20:06:16'),
+(98, 10, 'ia', '⚠️ Erro: {\"error\":{\"message\":\"Incorrect API key provided: aqui. You can find your API key at https:\\/\\/platform.openai.com\\/account\\/api-keys.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"}}', '2025-09-14 20:06:17'),
+(99, 10, 'cliente', 'e', '2025-09-14 20:06:25'),
+(100, 10, 'ia', '⚠️ Erro: {\"error\":{\"message\":\"Incorrect API key provided: aqui. You can find your API key at https:\\/\\/platform.openai.com\\/account\\/api-keys.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"}}', '2025-09-14 20:06:26');
 
 -- --------------------------------------------------------
 
@@ -77,20 +89,21 @@ CREATE TABLE `usuarios` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `tipo` enum('cliente','psicologo','admin') DEFAULT 'cliente',
-  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
+  `crp` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`, `criado_em`) VALUES
-(1, 'Nathan Teste', 'nathan@email.com', '1234', 'cliente', '2025-09-07 18:09:57'),
-(10, 'teste', 'teste@gmail.com', '$2y$10$UnqdLV5dyBdPukviD/XQbeziYMQgSacS8gZUuunVGFgTExFgprz8e', 'cliente', '2025-09-09 22:31:16'),
-(11, 'Nathan', 'nathanmarcheckneves@gmail.com', '$2y$10$r9Zxv8pq2fZGPJIjLZB/POfUV.xTkdsHFPvpMLTER3b.V9zurcxcq', 'psicologo', '2025-09-11 00:06:30'),
-(12, 'teste2', 'teste2@gmail.com', '$2y$10$eZXVjk7FejCAjblDrBwz.ebnQXmnHTJGpuD2e/zEA/xKa93yxhqk.', 'cliente', '2025-09-11 00:29:26'),
-(13, 'teste3', 'teste3@gmail.com', '$2y$10$.gvfZfiOQwuprOe7BgXGsOm7PX6fVjvRMYKXLfRU8k.yzeJ5obfpO', 'cliente', '2025-09-11 22:57:20'),
-(14, 'teste4', 'teste4@gmail.com', '$2y$10$OX9NNk9eenE01ZLKCN8a9O4pkJaeIJpHB1ba41V/QGQ1Ew0Ss2J1i', 'cliente', '2025-09-12 01:07:03');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`, `criado_em`, `crp`) VALUES
+(1, 'Nathan Teste', 'nathan@email.com', '1234', 'cliente', '2025-09-07 18:09:57', NULL),
+(10, 'teste', 'teste@gmail.com', '$2y$10$UnqdLV5dyBdPukviD/XQbeziYMQgSacS8gZUuunVGFgTExFgprz8e', 'cliente', '2025-09-09 22:31:16', NULL),
+(12, 'teste2', 'teste2@gmail.com', '$2y$10$eZXVjk7FejCAjblDrBwz.ebnQXmnHTJGpuD2e/zEA/xKa93yxhqk.', 'cliente', '2025-09-11 00:29:26', NULL),
+(13, 'teste3', 'teste3@gmail.com', '$2y$10$.gvfZfiOQwuprOe7BgXGsOm7PX6fVjvRMYKXLfRU8k.yzeJ5obfpO', 'cliente', '2025-09-11 22:57:20', NULL),
+(14, 'teste4', 'teste4@gmail.com', '$2y$10$OX9NNk9eenE01ZLKCN8a9O4pkJaeIJpHB1ba41V/QGQ1Ew0Ss2J1i', 'cliente', '2025-09-12 01:07:03', NULL),
+(15, 'Nathan', 'nathanmarcheckneves@gmail.com', '$2y$10$kwSQ3P/27tjQcHEAO.LGDustZfrDF5XNmdlcnMTEoSRci28.0dbji', 'psicologo', '2025-09-15 01:10:23', '123456');
 
 --
 -- Índices para tabelas despejadas
@@ -130,13 +143,13 @@ ALTER TABLE `conversa`
 -- AUTO_INCREMENT de tabela `conversas`
 --
 ALTER TABLE `conversas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restrições para tabelas despejadas

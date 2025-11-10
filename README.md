@@ -1,0 +1,1 @@
+Um projeto de website que hospedará uma inteligência artificial destinada a auxiliar psicólogos no atendimento de seus pacientes, promovendo maior conforto e liberdade para que os indivíduos se sintam à vontade ao dialogar com o profissional.
